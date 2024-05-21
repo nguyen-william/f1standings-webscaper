@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Standings</title>
+</head>
+<body>
+    <h1>F1 Standings</h1>
+    <div id="chart"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Example data, you would replace this with data loaded from your CSV or API
+        const labels = ['Race 1', 'Race 2', 'Race 3', 'Race 4'];
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Driver 1',
+                data: [10, 20, 15, 30],
+                borderColor: 'rgb(255, 99, 132)',
+                tension: 0.1
+            }, {
+                label: 'Driver 2',
+                data: [15, 25, 20, 35],
+                borderColor: 'rgb(54, 162, 235)',
+                tension: 0.1
+            }]
+        };
+
+        const config = {
+            type: 'line',
+            data: data,
+        };
+
+        var myChart = new Chart(
+            document.getElementById('chart'),
+            config
+        );
+    </script>
+</body>
+</html>
