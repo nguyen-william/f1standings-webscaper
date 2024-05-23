@@ -1,0 +1,28 @@
+/* I always reset all the html elements */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	font-family: sans-serif;
+	min-height: 100vh;
+	color: #555;
+	background-color: #fff;
+	display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+.chart{
+	width: 100%;
+    height: 100vh; /* Full viewport height */
+	padding: 50px;
+	margin: 0 auto;
+}
+.chart .chart_types{
+	text-align: center;
+	margin-bottom: 30px;
+}
+.chart .chart_types button{
+	padding: 10px 25px;
+}

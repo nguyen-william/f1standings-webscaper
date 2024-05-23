@@ -16,13 +16,13 @@ class F1standingspiderSpider(scrapy.Spider):
 
         driver_rows = response.css('.resultsarchive-table tbody tr')
         for driver in driver_rows:
-            
+            driver_first_name = driver.css('.dark .hide-for-tablet::text').get()
+            driver_last_name = driver.css('.dark .hide-for-mobile::text').get()
 
             yield {
                 'race': clean_race_name,
                 'position': driver.css('.dark::text').get(),
-                'driver_first_name': driver.css('.dark .hide-for-tablet::text').get(),
-                'driver_last_name': driver.css('.dark .hide-for-mobile::text').get(),
+                'driver_name': f"{driver_first_name} {driver_last_name}",
 
             }
 
@@ -40,6 +40,9 @@ class F1standingspiderSpider(scrapy.Spider):
     def closed(self, reason):
         # Load the scraped data from JSON
         data = pd.read_json('standings.json')
+
+        # Combine first and last names
+        data['driver'] = data['driver_name'].str.strip()
 
         # Process the data to create a DataFrame suitable for graphing
         df = data.pivot(index='race', columns='driver', values='position')
