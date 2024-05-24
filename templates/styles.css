@@ -14,7 +14,7 @@ body{
     align-items: center; /* Center content vertically */
 }
 .chart{
-	width: 100%;
+	width: 80%;
     height: 100vh; /* Full viewport height */
 	padding: 50px;
 	margin: 0 auto;

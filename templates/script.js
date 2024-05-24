@@ -23,6 +23,7 @@ function createChart(data, type) {
             borderWidth: 1,
             fill: false,
             borderColor: getRandomColor(),
+            Color: borderColor,
             tension: 0.1
         };
     });
@@ -37,6 +38,16 @@ function createChart(data, type) {
         },
         options: {
             plugins: {
+                display: true,
+                    text: 'F1 Standings',
+                    position: 'top',
+                    font: {
+                        size: 24
+                    },
+                    padding: {
+                        top: 10,
+                        bottom: 30
+                    },
                 legend: {
                     position: 'bottom', // Move legend to the bottom
                 }
@@ -46,7 +57,7 @@ function createChart(data, type) {
                     beginAtZero: true
                 },
                 y: {
-                    min: 1, // Set minimum value to 1
+                    min: 0, // Set minimum value to 1
                     max: 20, // Set maximum value to 20
                     reverse: true, // Reverse the order
                     ticks: {
