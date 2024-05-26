@@ -15,18 +15,18 @@ class F1standingspiderSpider(scrapy.Spider):
         clean_race_name = race_name.replace("\n         - RACE RESULT", "")
 
         driver_rows = response.css('.resultsarchive-table tbody tr')
-        for driver in driver_rows:
-            driver_first_name = driver.css('.dark .hide-for-tablet::text').get()
-            driver_last_name = driver.css('.dark .hide-for-mobile::text').get()
+        if race_name and "RACE RESULTS" not in race_name:
+            for driver in driver_rows:
+                driver_first_name = driver.css('.dark .hide-for-tablet::text').get()
+                driver_last_name = driver.css('.dark .hide-for-mobile::text').get()
 
-            yield {
-                'race': clean_race_name,
-                'position': driver.css('.dark::text').get(),
-                'driver_name': f"{driver_first_name} {driver_last_name}",
+                yield {
+                    'race': clean_race_name,
+                    'position': driver.css('.dark::text').get(),
+                    'driver_name': f"{driver_first_name} {driver_last_name}",
+                }
 
-            }
-
-            # Extract race links from the <select> element
+        # Extract race links from the <select> element
         race_options = response.css('select.resultsarchive-filter-form-select[name="meetingKey"] option::attr(value)').getall()
         
         # Filter out the "All" option and construct full URLs for each race
@@ -49,6 +49,7 @@ class F1standingspiderSpider(scrapy.Spider):
 
         # Save processed data to CSV
         df.to_csv('processed_standings.csv', index=True)
+
 
        
     
