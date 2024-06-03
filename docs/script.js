@@ -9,7 +9,30 @@ fetch('standings.json')
     });
 
     function createChart(data, type) {
-        const races = [...new Set(data.map(item => item.race))];
+        const races = [
+            'FORMULA 1 GULF AIR BAHRAIN GRAND PRIX 2023',
+            'FORMULA 1 STC SAUDI ARABIAN GRAND PRIX 2023',
+            'FORMULA 1 ROLEX AUSTRALIAN GRAND PRIX 2023',
+            'FORMULA 1 AZERBAIJAN GRAND PRIX 2023',
+            'FORMULA 1 CRYPTO.COM MIAMI GRAND PRIX 2023',
+            'FORMULA 1 GRAND PRIX DE MONACO 2023',
+            'FORMULA 1 AWS GRAN PREMIO DE ESPAÑA 2023',
+            'FORMULA 1 PIRELLI GRAND PRIX DU CANADA 2023',
+            'FORMULA 1 ROLEX GROSSER PREIS VON ÖSTERREICH 2023',
+            'FORMULA 1 ARAMCO BRITISH GRAND PRIX 2023',
+            'FORMULA 1 QATAR AIRWAYS HUNGARIAN GRAND PRIX 2023',
+            'FORMULA 1 MSC CRUISES BELGIAN GRAND PRIX 2023',
+            'FORMULA 1 HEINEKEN DUTCH GRAND PRIX 2023',
+            'FORMULA 1 PIRELLI GRAN PREMIO D’ITALIA 2023 ',
+            'FORMULA 1 SINGAPORE AIRLINES SINGAPORE GRAND PRIX 2023 ',
+            'FORMULA 1 LENOVO JAPANESE GRAND PRIX 2023 ',
+            'FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX 2023',
+            'FORMULA 1 LENOVO UNITED STATES GRAND PRIX 2023',
+            'FORMULA 1 GRAN PREMIO DE LA CIUDAD DE MÉXICO 2023',
+            'FORMULA 1 ROLEX GRANDE PRÊMIO DE SÃO PAULO 2023',
+            'FORMULA 1 HEINEKEN SILVER LAS VEGAS GRAND PRIX 2023',
+            'FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2023'
+        ];
         const drivers = [...new Set(data.map(item => item.driver_name))];
     
         const datasets = drivers.map(driver => {
