@@ -31,7 +31,7 @@ fetch('standings.json')
             'FORMULA 1 GRAN PREMIO DE LA CIUDAD DE MÉXICO 2023',
             'FORMULA 1 ROLEX GRANDE PRÊMIO DE SÃO PAULO 2023',
             'FORMULA 1 HEINEKEN SILVER LAS VEGAS GRAND PRIX 2023',
-            'FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2023'
+            'FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2023 '
         ];
         const drivers = [...new Set(data.map(item => item.driver_name))];
     
