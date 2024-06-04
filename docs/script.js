@@ -92,10 +92,16 @@ fetch('standings.json')
                     },
                     y: {
                         min: 0,
-                        max: 20,
+                        max: 21,
                         reverse: true,
                         ticks: {
-                            stepSize: 1
+                            stepSize: 1,
+                            callback: function(value) {
+                                if (value === 21) {
+                                    return 'NC'; // Label for NC
+                                }
+                                return value;
+                            }
                         }    
                     }
                 },
