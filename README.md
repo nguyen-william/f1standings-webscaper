@@ -8,21 +8,21 @@ This project consists of a web scraper for F1 standings and a web-based visualiz
 ## Project Structure
 
 f1-standings-visualization/
-├── index.html
-├── script.js
-├── standings.json
-├── styles.css
-├── scraper/
-│ ├── init.py
-│ ├── items.py
-│ ├── middlewares.py
-│ ├── pipelines.py
-│ ├── settings.py
-│ └── spiders/
-│ ├── init.py
-│ └── f1standingspider.py
-├── processed_standings.csv
-└── README.md
+├── index.html                                                                                                  
+├── script.js                                                                                                  
+├── standings.json                                                                                                
+├── styles.css                                                                                                
+├── scraper/                                                                                                
+│ ├── init.py                                                                                                
+│ ├── items.py                                                                                                
+│ ├── middlewares.py                                                                                                
+│ ├── pipelines.py                                                                                                
+│ ├── settings.py                                                                                                
+│ └── spiders/                                                                                                
+│ ├── init.py                                                                                                
+│ └── f1standingspider.py                                                                                                
+├── processed_standings.csv                                                                                                
+└── README.md                                                                                                
 
 ## Features
 - Scrapes driver standings
@@ -45,12 +45,18 @@ f1-standings-visualization/
     cd f1-standings-visualization
     ```
 
-2. **Install Python Dependencies**
+2. **Set Up a Virtual Environment**
     ```bash
-    pip install scrapy pandas
+    python -m venv env
+    source env/bin/activate  # On Windows use `env\Scripts\activate`
     ```
 
-3. **Install Frontend Dependencies**
+3. **Install Python Dependencies**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. **Install Frontend Dependencies**
     No additional dependencies are required for the frontend, as it uses CDN links for Chart.js.
 
 ## Usage
