@@ -7,7 +7,7 @@ This project consists of a web scraper for F1 standings and a web-based visualiz
 
 ## Project Structure
 
-f1-standings-visualization/
+f1-standings-visualization/                                                                            
 ├── index.html                                                                                                  
 ├── script.js                                                                                                  
 ├── standings.json                                                                                                
